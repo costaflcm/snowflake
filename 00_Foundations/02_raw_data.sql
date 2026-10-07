@@ -3,6 +3,9 @@
     Example: Create a bronze table and load data from a staged CSV file in Snowflake
 
         📌 In this example the .csv file must be in the stage
+        The file of this example is hosted on 
+        https://raw.githubusercontent.com/sassoftware/sas-viya-programming/refs/heads/master/data/cars.csv
+        
         📌 Raw data is a copy of the original data, no transformations applied.       
 
         💡 You can create a file format to check data structure before loading in the table
