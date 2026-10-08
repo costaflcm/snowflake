@@ -20,14 +20,7 @@ create database if not exists db_sample comment = 'A sample database for demonst
 create schema if not exists db_sample.bronze comment = 'Schema to storage the raw data' ;
 create schema if not exists db_sample.silver comment = 'Schema to storage the cleaned and transformed data' ;
 create schema if not exists db_sample.gold   comment = 'Schema to storage the aggregated data' ;
+create schema if not exists db_sample.pipelines comment= 'Schema to orchestration pipelines' ;
 
--- Create a role for data engineering tasks and grant necessary privileges
-create role if not exists db_sample comment = 'Role for data engineering tasks in db_sample' ;
-grant usage, operate on warehouse wh_sample to role data_engineer ;
-grant usage, create schema on database db_sample to role data_engineer ;
-grant usage, create table, create view on all schemas in database db_sample to role data_engineer ;
-grant usage, create table, create view on future schemas in database db_sample to role data_engineer ;
-grant select, insert, update, delete, truncate on all tables in database db_sample to role data_engineer ;
-grant select, insert, update, delete, truncate on future tables in database db_sample to role data_engineer ;
-grant select on all views in database db_sample to role data_engineer ;
-grant select on future views in database db_sample to role data_engineer ;
+-- Create a Stage on Bronze Schema ;
+create stage if not exists bronze.stg_csv;

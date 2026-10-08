@@ -36,7 +36,7 @@ join nmss n on n.rn = d.rn;
 
 -- This table has no eletrical cars and missing values in cylinders is a error in the data, 
 -- so we will remove these rows and create a new table in the silver schema with the cleaned data
-DB_SAMPLE.SILVERcreate or replace table cars
+create or replace table cars
 as
 select
     make,
